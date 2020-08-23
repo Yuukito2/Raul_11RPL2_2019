@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#C80B0B"
+    >
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:background="@mipmap/logo_foreground"
+        ></ImageView>
+
+    <EditText
+        android:id="@+id/txt_Username"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Username"
+        android:textColorHint="#FFFFFF"
+        android:backgroundTint="#000000"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/txt_Password"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Password"
+        android:textColorHint="#FFFFFF"
+        android:backgroundTint="#000000"
+        ></EditText>
+
+    <Button
+        android:id="@+id/btn_Login"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center"
+        android:background="#000000"
+        android:text="LOGIN"
+        android:textColor="#FFFFFF"
+        ></Button>
+
+
+</LinearLayout>
