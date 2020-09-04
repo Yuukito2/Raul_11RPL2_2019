@@ -1,6 +1,7 @@
 package com.example.raul_11rpl2_2019;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +12,8 @@ import android.widget.Button;
 public class MainMenu extends AppCompatActivity {
 
     Button btn_Logout;
+    CardView menu1;
+    CardView menu2;
     static SharedPreferences sharedPreferences;
 
     @Override
@@ -19,9 +22,12 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
         btn_Logout = findViewById(R.id.btn_Logout);
+        menu1 = (CardView)findViewById(R.id.menu1);
+        menu2 = (CardView)findViewById(R.id.menu2);
 
         sharedPreferences = getSharedPreferences("Login", MODE_PRIVATE);
 
+        //LOGOUT
         btn_Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,7 +36,6 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         String username;
         Bundle extras = getIntent().getExtras();
         if (extras == null){
@@ -40,6 +45,14 @@ public class MainMenu extends AppCompatActivity {
             username = extras.getString("Username");
         }
 
+        //Menu1
+        menu1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ListData.class));
+            }
+        });
 
     }
+
 }
