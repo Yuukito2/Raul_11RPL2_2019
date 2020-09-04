@@ -5,7 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
+
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -21,7 +31,8 @@ public class ListData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
         recyclerView = (RecyclerView) findViewById(R.id.rv_data);
-        addData();
+        //addData();
+        addDataOnline();
     }
 
     void addData() {
@@ -53,5 +64,65 @@ public class ListData extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         //get data online
+    }
+
+    void addDataOnline(){
+        AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=08db2c2b30f151cf4f9b2065c21f48c6&language=en-US")
+                .setTag("test")
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // do anything with response
+                        Log.d("hasiljson", "onResponse: " + response.toString());
+                        //jika sudah berhasil debugm lanjutkan code dibawah ini
+                        DataArrayList = new ArrayList<>();
+                        Model Modelku;
+
+                        try {
+                            Log.d("hasiljson", "onResponse: " + response.toString());
+                            JSONArray jsonArray = response.getJSONArray("results");
+                            Log.d("hasiljson2", "onResponse: " + jsonArray.toString());
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                Modelku = new Model();
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                Modelku.setOriginal_title(jsonObject.getString("original_title"));
+                                Modelku.setPoster_path("https://image.tmdb.org/t/p/w500"+jsonObject.getString("poster_path"));
+                                Modelku.setOverview(jsonObject.getString("overview"));
+                                Modelku.setRelease_date(jsonObject.getString("release_date"));
+                                Modelku.setVote_count(jsonObject.getInt("vote_count"));
+                                Modelku.setAdult(jsonObject.getBoolean("adult"));
+                                DataArrayList.add(Modelku);
+                            }
+
+                            //Handle Click
+                            adapter = new DataAdapter(DataArrayList, new DataAdapter.Callback() {
+                                @Override
+                                public void onClick(int position) {
+
+                                }
+
+                                @Override
+                                public void test() {
+
+                                }
+                            });
+                            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListData.this);
+                            recyclerView.setLayoutManager(layoutManager);
+                            recyclerView.setAdapter(adapter);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError error) {
+                        // handle error
+                        Log.d("errorku", "onError errorCode : " + error.getErrorCode());
+                        Log.d("errorku", "onError errorBody : " + error.getErrorBody());
+                        Log.d("errorku", "onError errorDetail : " + error.getErrorDetail());
+                    }
+                });
     }
 }

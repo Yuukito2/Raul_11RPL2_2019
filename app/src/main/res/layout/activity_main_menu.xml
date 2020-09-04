@@ -30,7 +30,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/menu1"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="100dp"
         android:layout_margin="20dp"
         android:layout_marginBottom="1dp"
         app:cardBackgroundColor="#E4000000"
@@ -59,7 +59,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:padding="10dp"
                     android:singleLine="true"
-                    android:text="Lihat Product"
+                    android:text="MOVIE LIST"
                     android:textColor="#000000"
                     tools:targetApi="lollipop" />
 
@@ -73,7 +73,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/menu2"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="100dp"
         android:layout_margin="20dp"
         android:layout_marginBottom="1dp"
         app:cardBackgroundColor="#E4000000"
@@ -102,7 +102,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:padding="10dp"
                     android:singleLine="true"
-                    android:text="Lihat Product Favouriteku"
+                    android:text="FAVOURITE MOVIE"
                     android:textColor="#000000"
                     tools:targetApi="lollipop" />
 
