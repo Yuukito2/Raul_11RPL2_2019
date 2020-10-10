@@ -13,6 +13,11 @@ public class Model  {
     Boolean adult;
     String overview;
     int vote_count;
+    int id;
+
+    public int getId() {
+        return id;
+    }
 
     public String getOriginal_title() {
         return original_title;

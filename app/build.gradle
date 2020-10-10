@@ -22,6 +22,9 @@ android {
 }
 
 dependencies {
+    //realmDB
+    apply plugin: 'realm-android'
+
     //cardview
     implementation "androidx.cardview:cardview:1.0.0"
 
