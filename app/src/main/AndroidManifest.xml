@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailMovie"></activity>
+        <activity android:name=".ListDataFavourite"></activity>
+        <activity android:name=".DataAdapterFavourite" />
+        <activity android:name=".DetailFavourite" />
+        <activity android:name=".DetailMovie" />
         <activity android:name=".ListData" />
         <activity android:name=".ControlClass" />
         <activity android:name=".MainMenu" />

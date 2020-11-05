@@ -27,7 +27,7 @@ public class DetailMovie extends AppCompatActivity {
     String date;
     String deskripsi;
     String path;
-    int id;
+    String id;
 
     TextView tv_judul;
     ImageView iv_poster;
@@ -46,7 +46,7 @@ public class DetailMovie extends AppCompatActivity {
 
         if (extras != null) {
             title = extras.getString("judul");
-            id = extras.getInt("id");
+            id = extras.getString("id");
             date = extras.getString("date");
             deskripsi = extras.getString("deskripsi");
             path = extras.getString("path");

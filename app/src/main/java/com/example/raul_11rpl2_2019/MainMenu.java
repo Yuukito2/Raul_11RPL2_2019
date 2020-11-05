@@ -45,13 +45,22 @@ public class MainMenu extends AppCompatActivity {
             username = extras.getString("Username");
         }
 
-        //Menu1
+        //Menu 1
         menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), ListData.class));
             }
         });
+
+        //Menu 2
+        menu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ListDataFavourite.class));
+            }
+        });
+
 
     }
 

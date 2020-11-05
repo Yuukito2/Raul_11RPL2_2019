@@ -12,8 +12,19 @@
     <TextView
         android:layout_margin="20dp"
         android:layout_gravity="center"
+        android:textAlignment="center"
+        android:text="Movie Favourite"
+        android:background="#202020"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#C80B0B"
+        android:textSize="35dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
         android:text="JUDUL MOVIE"
-        android:id="@+id/tv_judul"
+        android:id="@+id/tv_judulfav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#202020"
@@ -23,16 +34,16 @@
     <ImageView
         android:layout_gravity="center"
         android:src="@mipmap/ic_launcher"
-        android:id="@+id/iv_poster"
+        android:id="@+id/iv_posterfav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:layout_marginLeft="25px"
-        android:layout_marginRight="25px"
+        android:layout_marginLeft="75px"
+        android:layout_marginRight="75px"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
-        android:id="@+id/tv_descript"
+        android:id="@+id/tv_descriptfav"
         android:text="Deskripsi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,15 +51,7 @@
         android:textSize="15dp"
         android:textStyle="bold"/>
 
-    <Button
-        android:id="@+id/btn_bookmark"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:text="Bookmark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#202020"
-        android:textColor="#FFFFFF"/>
+
 
 </LinearLayout>
 

@@ -78,7 +78,7 @@ public class ListData extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         // do anything with response
                         Log.d("hasiljson", "onResponse: " + response.toString());
-                        //jika sudah berhasil debugm lanjutkan code dibawah ini
+                        //Debug berhasil -> lanjut code bawah
                         DataArrayList = new ArrayList<>();
                         Model Modelku;
 
