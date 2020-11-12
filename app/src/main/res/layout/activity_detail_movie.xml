@@ -28,8 +28,8 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:layout_marginLeft="25px"
-        android:layout_marginRight="25px"
+        android:layout_marginLeft="75px"
+        android:layout_marginRight="75px"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:id="@+id/tv_descript"
